@@ -1,0 +1,70 @@
+<ion-content>
+  <section class="h-48 p-8 header">
+    <section class="flex justify-between">
+      <section class="text-white">
+        <h5 class="m-0 font-normal">Hello!</h5>
+        <h3 class="m-0 font-bold">Jim Doe</h3>
+      </section>
+
+      <img class="h-12" src="./assets/images/home/avatar.svg">
+    </section>
+  </section>
+
+  <ion-slides class="card-slides px-2" [options]="slideOpts">
+    <ion-slide class="py-1 px-2">
+      <app-card class="w-full"></app-card>
+    </ion-slide>
+
+    <ion-slide class="py-1 px-2">
+      <app-card class="w-full"></app-card>
+    </ion-slide>
+  </ion-slides>
+
+  <section class="px-3 relative top-negative-64">
+    <h2 class="pl-1">Services</h2>
+
+    <section class="flex justify-between">
+      <section class="flex flex-col justify-center w-3/12 py-2.5 px-1 bg-indigo-100 rounded-md m-1 text-center">
+        <ion-icon class="text-2xl mx-auto text-indigo-700" name="paper-plane"></ion-icon>
+        <span class="text-sm text-indigo-700 pt-2">Transfer</span>
+      </section>
+
+      <section class="flex flex-col justify-center w-3/12 py-2.5 px-1 bg-yellow-100 rounded-md m-1 text-center">
+        <ion-icon class="text-2xl mx-auto text-yellow-700" name="gift"></ion-icon>
+        <span class="text-sm text-yellow-700 pt-2">Points</span>
+      </section>
+
+      <section class="flex flex-col justify-center w-3/12 py-2.5 px-1 bg-green-100 rounded-md m-1 text-center">
+        <ion-icon class="text-2xl mx-auto text-green-700" name="newspaper"></ion-icon>
+        <span class="text-sm text-green-700 pt-2">Bills Payment</span>
+      </section>
+
+      <section class="flex flex-col justify-center w-3/12 py-2.5 px-1 bg-gray-100 rounded-md m-1 text-center">
+        <ion-icon class="text-2xl mx-auto text-gray-700" name="phone-portrait"></ion-icon>
+        <span class="text-sm text-gray-700 pt-2">Eload</span>
+      </section>
+    </section>
+
+    <section class="flex justify-between">
+      <section class="flex flex-col justify-center w-3/12 py-2.5 px-1 bg-gray-100 rounded-md m-1 text-center">
+        <ion-icon class="text-2xl mx-auto text-gray-700" name="apps"></ion-icon>
+        <span class="text-sm text-gray-700 pt-2">Gaming Pins</span>
+      </section>
+
+      <section class="flex flex-col justify-center w-3/12 py-2.5 px-1 bg-green-100 rounded-md m-1 text-center">
+        <ion-icon class="text-2xl mx-auto text-green-700" name="medkit"></ion-icon>
+        <span class="text-sm text-green-700 pt-2">E Insurance</span>
+      </section>
+
+      <section class="flex flex-col justify-center w-3/12 py-2.5 px-1 bg-indigo-100 rounded-md m-1 text-center">
+        <ion-icon class="text-2xl mx-auto text-indigo-700" name="cart"></ion-icon>
+        <span class="text-sm text-indigo-700 pt-2">Products</span>
+      </section>
+
+      <section class="flex flex-col justify-center w-3/12 py-2.5 px-1 bg-yellow-100 rounded-md m-1 text-center">
+        <ion-icon class="text-2xl mx-auto text-yellow-700" name="reorder-four"></ion-icon>
+        <span class="text-sm text-yellow-700 pt-2">History</span>
+      </section>
+    </section>
+  </section>
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-content>
+  <ion-slides pager (ionSlideDidChange)="ionSlideDidChange()">
+    <ion-slide *ngFor="let slide of slides">
+      <section class="flex flex-col justify-center h-full py-12 px-8">
+        <img class="mx-auto" [src]="slide.image" [alt]="slide.title">
+  
+        <section class="py-8">
+          <h2>{{ slide.title }}</h2>
+          <p class="text-sm text-justify text-gray-600">{{ slide.description }}</p>
+        </section>
+      </section>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+
+<ion-footer class="no-border">
+  <ion-toolbar class="px-6">
+    <ion-grid class="p-0">
+      <ion-row class="p-0">
+        <ion-col size="6">
+          <button routerLink="/mobile-number" class="ion-activatable ripple-parent my-4 text-lg font-semibold bg-indigo-500 w-full text-white rounded-lg px-6 py-2.5 block shadow-md outline-none">
+            Register
+            <ion-ripple-effect></ion-ripple-effect>
+          </button>
+        </ion-col>
+        <ion-col size="6">
+          <button routerLink="/tabs/tab1" class="ion-activatable ripple-parent my-4 text-lg font-semibold bg-indigo-100 w-full text-indigo-500 rounded-lg px-6 py-2.5 block outline-none">
+            Login
+            <ion-ripple-effect></ion-ripple-effect>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

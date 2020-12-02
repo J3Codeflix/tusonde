@@ -1,0 +1,12 @@
+.header {
+    border-radius: 0 0 1.5rem 1.5rem;
+    
+    background-color: var(--ion-color-tertiary);
+    background-image: url("/assets/images/home/wave.svg");
+    background-repeat: no-repeat;
+}
+
+.card-slides {
+    position: relative;
+    top: -64px;
+}

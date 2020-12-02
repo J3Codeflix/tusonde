@@ -1,0 +1,10 @@
+::ng-deep app-registration-form .swiper-pagination.swiper-pagination-bullets {
+    bottom: none;
+    top: 5px;
+    height: 0;
+}
+
+ion-item {
+    --padding-start: 0;
+}
+

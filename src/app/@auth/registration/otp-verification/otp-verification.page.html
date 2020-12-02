@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/mobile-number"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Authentication</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <section class="flex flex-col align-center justify-center h-full p-8">
+    <section class="text-center">
+      <img class="mx-auto" src="./assets/images/registration/otp-verification.svg">
+      
+      <section class="flex flex-col my-8">
+        <ng-otp-input  (onInputChange)="onOtpChange($event)"  [config]="otpConfig"></ng-otp-input>
+
+        <span class="tracking-wide mt-4 ml-1">
+          Enter 5 digit verification code <br> sent to your mobile number.
+        </span>
+      </section>
+    </section>
+  </section>
+</ion-content>
+
+<ion-footer class="no-border">
+  <ion-toolbar class="px-8">
+    <button class="ion-activatable ripple-parent my-4 text-lg bg-indigo-100 w-full text-indigo-500 rounded-lg px-6 py-2.5 block outline-none">
+      Need new code? Resend now.
+      <ion-ripple-effect></ion-ripple-effect>
+    </button>
+
+    <button (click)="onSubmit()" [ngClass]="{ 'opacity-50': !isValid, 'ion-activatable ripple-parent': isValid }" [disabled]="!isValid" class="my-4 text-lg font-semibold bg-indigo-500 w-full text-white rounded-lg px-6 py-2.5 block shadow-md outline-none">
+      Submit
+      <ion-ripple-effect></ion-ripple-effect>
+    </button>
+  </ion-toolbar>
+</ion-footer>
+

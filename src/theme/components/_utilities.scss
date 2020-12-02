@@ -1,0 +1,31 @@
+.bg-blue-custom {
+    background: #2b354b;
+}
+
+.bg-blue-custom-light {
+    background: #e7eeff;
+}
+
+.text-blue-custom {
+    color: #2b354b;
+}
+
+.text-blue-custom-light {
+    color: rgba(43, 53, 75, 0.5);
+}
+
+.border-blue-custom {
+    border-color: #2b354b;
+}
+
+.outline-none:focus {
+    outline: 0;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.top-negative-64 {
+    top: -64px;
+}

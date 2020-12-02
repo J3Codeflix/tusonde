@@ -1,0 +1,140 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/otp-verification"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Registration</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-slides pager>
+    <ion-slide>
+      <section class="text-left">
+        <section class="p-8 w-full">
+          <section class="text-center">
+            <h3 class="m-0">Tell Us About Yourself</h3>
+            <p class="text-gray-500 text-sm">Only provide information that is true and correct.</p>
+          </section>
+
+          <section class="py-2.5">
+            <span class="text-gray-700">First Name</span>
+            <input type="text" class="text-md block mt-1 px-3 py-2.5 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-none focus:placeholder-gray-500 focus:bg-white focus:border-indigo-500 focus:outline-none" />
+          </section>
+      
+          <section class="py-2.5">
+            <span class="text-gray-700">Last Name</span>
+            <input type="text" class="text-md block mt-1 px-3 py-2.5 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-none focus:placeholder-gray-500 focus:bg-white focus:border-indigo-500 focus:outline-none" />
+          </section>
+      
+          <section class="py-2.5">
+            <span class="text-gray-700">Date of Birth</span>
+            <div class="inline-block relative w-full">
+              <input [max]="maxDate" type="date" class="appearance-none text-md block mt-1 px-3 py-2.5 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-none focus:placeholder-gray-500 focus:bg-white focus:border-indigo-500 focus:outline-none" />
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-700">
+                <svg class="h-6 w-6 text-gray-400"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+              </div>
+            </div>
+          </section>
+      
+          <section class="py-2.5">
+            <span class="text-gray-700">Address</span>
+            <input type="text" class="text-md block mt-1 px-3 py-2.5 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-none focus:placeholder-gray-500 focus:bg-white focus:border-indigo-500 focus:outline-none" />
+          </section>
+      
+          <section class="py-2.5">
+            <span class="text-gray-700">Email address</span>
+            <input type="email" class="text-md block mt-1 px-3 py-2.5 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-none focus:placeholder-gray-500 focus:bg-white focus:border-indigo-500 focus:outline-none" />
+          </section>
+
+          <section class="py-2.5">
+            <span class="text-gray-700">Referral Code (Optional)</span>
+            <input type="text" class="text-md block mt-1 px-3 py-2.5 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-none focus:placeholder-gray-500 focus:bg-white focus:border-indigo-500 focus:outline-none" />
+          </section>
+        </section>
+      </section>
+    </ion-slide>
+
+    <ion-slide>
+      <section class="h-full w-full text-left">
+        <section class="p-8 w-full">
+          <section class="text-center">
+            <h3 class="m-0">Review Information</h3>
+            <p class="text-gray-500 text-sm">Check your spelling and important dates.</p>
+          </section>
+
+          <ion-list>
+            <ion-item>
+              <ion-label>
+                <p>Full Name</p>
+                <h2 class="ion-text-wrap">Jim Doe</h2>
+              </ion-label>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>
+                <p>Date of Birth</p>
+                <h2 class="ion-text-wrap">January 1, 2000</h2>
+              </ion-label>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>
+                <ion-label>
+                  <p>Address</p>
+                  <h2 class="ion-text-wrap">Brgy. Villamonte, Bacolod City, Negros Occidental</h2>
+                </ion-label>
+              </ion-label>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>
+                <p>Email address</p>
+                <h2 class="ion-text-wrap">jimdoe@gmail.com</h2>
+              </ion-label>
+            </ion-item>
+          </ion-list>
+
+          <button (click)="onSubmit()" class="ion-activatable ripple-parent my-4 text-lg bg-indigo-100 w-full text-indigo-500 rounded-lg px-6 py-2.5 block focus:outline-none">
+            Edit My Details
+            <ion-ripple-effect></ion-ripple-effect>
+          </button>
+        </section>
+      </section>
+    </ion-slide>
+
+    <ion-slide>
+      <section class="h-full w-full text-left">
+        <section class="p-8 w-full">
+          <section class="text-center">
+            <h3 class="m-0">Setup Your Mobile Pin</h3>
+            <p class="text-gray-500 text-sm">Avoid using weak and easy to guess MPINS such as 1234, 1111 or your date of birth.</p>
+          </section>
+
+          <section class="py-2.5">
+            <span class="text-gray-700">Create your 4-digit MPIN</span>
+            <input type="password" pattern="[0-9]*" inputmode="numeric" maxlength="4" class="text-md block mt-1 px-3 py-2.5 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-none focus:placeholder-gray-500 focus:bg-white focus:border-indigo-500 focus:outline-none" />
+          </section>
+
+          <section class="py-2.5">
+            <span class="text-gray-700">Verify your 4-digit MPIN</span>
+            <input type="password" pattern="[0-9]*" inputmode="numeric" maxlength="4" class="text-md block mt-1 px-3 py-2.5 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-none focus:placeholder-gray-500 focus:bg-white focus:border-indigo-500 focus:outline-none" />
+          </section>
+        </section>
+      </section>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+
+<ion-footer class="no-border">
+  <ion-toolbar class="px-8">
+    <button (click)="onSubmit()" [ngClass]="{ 'opacity-50': !isValid, 'ion-activatable ripple-parent': isValid }" [disabled]="!isValid" class="my-4 text-lg font-semibold bg-indigo-500 w-full text-white rounded-lg px-6 py-2.5 block shadow-md outline-none">
+      Next
+      <ion-ripple-effect></ion-ripple-effect>
+    </button>
+  </ion-toolbar>
+</ion-footer>
