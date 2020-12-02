@@ -12,8 +12,8 @@
 
   <ion-slides pager>
     <ion-slide>
-      <section class="text-left">
-        <section class="p-8 w-full">
+      <section class="w-full text-left">
+        <section class="p-8">
           <section class="text-center">
             <h3 class="m-0">Tell Us About Yourself</h3>
             <p class="text-gray-500 text-sm">Only provide information that is true and correct.</p>
@@ -99,7 +99,7 @@
             </ion-item>
           </ion-list>
 
-          <button (click)="onSubmit()" class="ion-activatable ripple-parent my-4 text-lg bg-indigo-100 w-full text-indigo-500 rounded-lg px-6 py-2.5 block focus:outline-none">
+          <button (click)="onSubmit()" class="ion-activatable ripple-parent my-4 text-lg bg-indigo-100 w-full text-indigo-500 rounded-lg px-4 py-2.5 block focus:outline-none">
             Edit My Details
             <ion-ripple-effect></ion-ripple-effect>
           </button>
@@ -131,8 +131,8 @@
 </ion-content>
 
 <ion-footer class="no-border">
-  <ion-toolbar class="px-8">
-    <button (click)="onSubmit()" [ngClass]="{ 'opacity-50': !isValid, 'ion-activatable ripple-parent': isValid }" [disabled]="!isValid" class="my-4 text-lg font-semibold bg-indigo-500 w-full text-white rounded-lg px-6 py-2.5 block shadow-md outline-none">
+  <ion-toolbar class="px-4">
+    <button (click)="onSubmit()" [ngClass]="{ 'opacity-50': !isValid, 'ion-activatable ripple-parent': isValid }" [disabled]="!isValid" class="my-4 text-lg font-semibold bg-indigo-500 w-full text-white rounded-lg px-4 py-2.5 block shadow-md outline-none">
       Next
       <ion-ripple-effect></ion-ripple-effect>
     </button>
