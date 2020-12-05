@@ -14,18 +14,18 @@ export class OnboardingPage implements OnInit {
 
   slides = [
     {
-      title: 'Secure Your Money',
-      description: 'Add your credit card, bank details here to the transaction. Don’t worry about it. It\'s fully secure.',
+      title: 'Tusonde Management',
+      description: 'Create and manage your Tusonde. Don’t worry about it. It\'s fully secure.',
       image: './assets/images/onboarding/slide-1.svg'
     },
     {
-      title: 'Manage Everything',
-      description: 'You can manage each and everything from here. Transfer money, get rewards, vouchers, and so much more.',
+      title: 'Share With Anyone',
+      description: 'You can easily share the Tusonde you create to various social media and messaging platforms.',
       image: './assets/images/onboarding/slide-2.svg'
     },
     {
-      title: 'Safe Transaction',
-      description: 'Transfer money account to account. Don’t share this id anywhere. Only you can manage your transaction.',
+      title: 'Secure Payouts',
+      description: 'Securing your payouts',
       image: './assets/images/onboarding/slide-3.svg'
     },
   ];
