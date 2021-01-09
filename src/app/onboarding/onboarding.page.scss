@@ -5,3 +5,7 @@ ion-slides {
         width: 75%;
     }
 }
+
+.bg-color-primary-tint a{
+    background-color: var(--ion-color-primary-tint);
+}
