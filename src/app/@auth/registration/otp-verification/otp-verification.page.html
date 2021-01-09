@@ -25,12 +25,12 @@
 
 <ion-footer class="no-border">
   <ion-toolbar class="px-4">
-    <button class="ion-activatable ripple-parent my-4 text-lg bg-indigo-100 w-full text-indigo-500 rounded-lg px-4 py-2.5 block outline-none">
+    <button class="ion-activatable ripple-parent my-4 text-lg w-full text-custom-primary rounded-lg px-4 py-2.5 block outline-none">
       Need new code? Resend now.
       <ion-ripple-effect></ion-ripple-effect>
     </button>
 
-    <button (click)="onSubmit()" [ngClass]="{ 'opacity-50': !isValid, 'ion-activatable ripple-parent': isValid }" [disabled]="!isValid" class="my-4 text-lg font-semibold bg-indigo-500 w-full text-white rounded-lg px-4 py-2.5 block shadow-md outline-none">
+    <button (click)="onSubmit()" [ngClass]="{ 'opacity-50': !isValid, 'ion-activatable ripple-parent': isValid }" [disabled]="!isValid" class="my-4 text-lg font-semibold bg-custom-primary w-full text-white rounded-lg px-4 py-2.5 block shadow-md outline-none">
       Submit
       <ion-ripple-effect></ion-ripple-effect>
     </button>

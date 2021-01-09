@@ -7,12 +7,12 @@
 
       <div class="relative">
         <div class="absolute flex border border-transparent left-0 top-0 h-full w-10 pl-2">
-          <div class="flex items-center justify-center rounded-tl rounded-bl z-10 text-indigo-600 text-md h-full w-full">
+          <div class="flex items-center justify-center rounded-tl rounded-bl z-10 text-gray-700 text-md h-full w-full">
             +63
           </div>
         </div>
 
-        <input [(ngModel)]="mobileNumber" (keyup)="onChange()" id="mobileNumber" name="mobileNumber" type="tel" placeholder="Enter your mobile number" value="" class="text-md relative w-full border-2 rounded placeholder-indigo-400 focus:border-indigo-400 focus:outline-none py-2.5 pr-2 pl-12">
+        <input [(ngModel)]="mobileNumber" (keyup)="onChange()" id="mobileNumber" name="mobileNumber" type="tel" placeholder="Enter your mobile number" value="" class="text-md relative w-full border-2 rounded focus:border-custom-primary focus:outline-none py-2.5 pr-2 pl-12">
       </div>
 
       <span class="flex items-center tracking-wide text-xs mt-1 ml-1">
@@ -24,7 +24,7 @@
 
 <ion-footer class="no-border">
   <ion-toolbar class="px-4">
-    <button (click)="onSubmit()" [ngClass]="{ 'opacity-50': !isValid, 'ion-activatable ripple-parent': isValid }" [disabled]="!isValid"  class="my-4 text-lg font-semibold bg-indigo-500 w-full text-white rounded-lg px-4 py-2.5 block shadow-md outline-none">
+    <button (click)="onSubmit()" [ngClass]="{ 'opacity-50': !isValid, 'ion-activatable ripple-parent': isValid }" [disabled]="!isValid"  class="my-4 text-lg font-semibold bg-custom-primary w-full text-white rounded-lg px-4 py-2.5 block shadow-md outline-none">
       Next
       <ion-ripple-effect></ion-ripple-effect>
     </button>

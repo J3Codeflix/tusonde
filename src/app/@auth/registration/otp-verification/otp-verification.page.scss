@@ -1,12 +1,12 @@
 ::ng-deep ng-otp-input .otp-input {
     border: 2px solid !important;
-    border-color: rgba(var(--ion-color-tertiary-rgb), 0.1) !important;
+    border-color: rgba(var(--ion-color-primary-rgb), 0.1) !important;
     font-size: 1.5rem !important;
     height: 2.5rem !important;
     width: 2.5rem !important;
 }
 
 ::ng-deep ng-otp-input .otp-input:focus {
-    border-color: var(--ion-color-tertiary) !important;
+    border-color: var(--ion-color-primary) !important;
     outline: none;
 }

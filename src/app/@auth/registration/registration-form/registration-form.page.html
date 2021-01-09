@@ -13,7 +13,7 @@
   <ion-slides pager>
     <ion-slide>
       <section class="w-full text-left">
-        <section class="p-8">
+        <section class="px-4 py-8">
           <section class="text-center">
             <h3 class="m-0">Tell Us About Yourself</h3>
             <p class="text-gray-500 text-sm">Only provide information that is true and correct.</p>
@@ -21,18 +21,18 @@
 
           <section class="py-2.5">
             <span class="text-gray-700">First Name</span>
-            <input type="text" class="text-md block mt-1 px-3 py-2.5 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-none focus:placeholder-gray-500 focus:bg-white focus:border-indigo-500 focus:outline-none" />
+            <input type="text" class="text-md block mt-1 px-3 py-2.5 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-none focus:placeholder-gray-500 focus:bg-white focus:border-custom-primary focus:outline-none" />
           </section>
       
           <section class="py-2.5">
             <span class="text-gray-700">Last Name</span>
-            <input type="text" class="text-md block mt-1 px-3 py-2.5 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-none focus:placeholder-gray-500 focus:bg-white focus:border-indigo-500 focus:outline-none" />
+            <input type="text" class="text-md block mt-1 px-3 py-2.5 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-none focus:placeholder-gray-500 focus:bg-white focus:border-custom-primary focus:outline-none" />
           </section>
       
           <section class="py-2.5">
             <span class="text-gray-700">Date of Birth</span>
             <div class="inline-block relative w-full">
-              <input [max]="maxDate" type="date" class="appearance-none text-md block mt-1 px-3 py-2.5 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-none focus:placeholder-gray-500 focus:bg-white focus:border-indigo-500 focus:outline-none" />
+              <input [max]="maxDate" type="date" class="appearance-none text-md block mt-1 px-3 py-2.5 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-none focus:placeholder-gray-500 focus:bg-white focus:border-custom-primary focus:outline-none" />
               <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-700">
                 <svg class="h-6 w-6 text-gray-400"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
@@ -43,17 +43,17 @@
       
           <section class="py-2.5">
             <span class="text-gray-700">Address</span>
-            <input type="text" class="text-md block mt-1 px-3 py-2.5 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-none focus:placeholder-gray-500 focus:bg-white focus:border-indigo-500 focus:outline-none" />
+            <input type="text" class="text-md block mt-1 px-3 py-2.5 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-none focus:placeholder-gray-500 focus:bg-white focus:border-custom-primary focus:outline-none" />
           </section>
       
           <section class="py-2.5">
             <span class="text-gray-700">Email address</span>
-            <input type="email" class="text-md block mt-1 px-3 py-2.5 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-none focus:placeholder-gray-500 focus:bg-white focus:border-indigo-500 focus:outline-none" />
+            <input type="email" class="text-md block mt-1 px-3 py-2.5 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-none focus:placeholder-gray-500 focus:bg-white focus:border-custom-primary focus:outline-none" />
           </section>
 
           <section class="py-2.5">
             <span class="text-gray-700">Referral Code (Optional)</span>
-            <input type="text" class="text-md block mt-1 px-3 py-2.5 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-none focus:placeholder-gray-500 focus:bg-white focus:border-indigo-500 focus:outline-none" />
+            <input type="text" class="text-md block mt-1 px-3 py-2.5 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-none focus:placeholder-gray-500 focus:bg-white focus:border-custom-primary focus:outline-none" />
           </section>
         </section>
       </section>
@@ -99,7 +99,7 @@
             </ion-item>
           </ion-list>
 
-          <button (click)="onSubmit()" class="ion-activatable ripple-parent my-4 text-lg bg-indigo-100 w-full text-indigo-500 rounded-lg px-4 py-2.5 block focus:outline-none">
+          <button class="ion-activatable ripple-parent my-4 text-lg bg-gray-500 w-full text-white rounded-lg px-4 py-2.5 block focus:outline-none shadow-md">
             Edit My Details
             <ion-ripple-effect></ion-ripple-effect>
           </button>
@@ -117,12 +117,12 @@
 
           <section class="py-2.5">
             <span class="text-gray-700">Create your 4-digit MPIN</span>
-            <input type="password" pattern="[0-9]*" inputmode="numeric" maxlength="4" class="text-md block mt-1 px-3 py-2.5 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-none focus:placeholder-gray-500 focus:bg-white focus:border-indigo-500 focus:outline-none" />
+            <input type="password" pattern="[0-9]*" inputmode="numeric" maxlength="4" class="text-md block mt-1 px-3 py-2.5 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-none focus:placeholder-gray-500 focus:bg-white focus:border-custom-primary focus:outline-none" />
           </section>
 
           <section class="py-2.5">
             <span class="text-gray-700">Verify your 4-digit MPIN</span>
-            <input type="password" pattern="[0-9]*" inputmode="numeric" maxlength="4" class="text-md block mt-1 px-3 py-2.5 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-none focus:placeholder-gray-500 focus:bg-white focus:border-indigo-500 focus:outline-none" />
+            <input type="password" pattern="[0-9]*" inputmode="numeric" maxlength="4" class="text-md block mt-1 px-3 py-2.5 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-none focus:placeholder-gray-500 focus:bg-white focus:border-custom-primary focus:outline-none" />
           </section>
         </section>
       </section>
@@ -132,7 +132,7 @@
 
 <ion-footer class="no-border">
   <ion-toolbar class="px-4">
-    <button (click)="onSubmit()" [ngClass]="{ 'opacity-50': !isValid, 'ion-activatable ripple-parent': isValid }" [disabled]="!isValid" class="my-4 text-lg font-semibold bg-indigo-500 w-full text-white rounded-lg px-4 py-2.5 block shadow-md outline-none">
+    <button (click)="onSubmit()" [ngClass]="{ 'opacity-50': !isValid, 'ion-activatable ripple-parent': isValid }" [disabled]="!isValid" class="my-4 text-lg font-semibold bg-custom-primary w-full text-white rounded-lg px-4 py-2.5 block shadow-md outline-none">
       Next
       <ion-ripple-effect></ion-ripple-effect>
     </button>

@@ -1,3 +1,27 @@
+.bg-custom-primary {
+    background: var(--ion-color-primary);
+}
+
+.bg-custom-primary-100 {
+    background: rgba(var(--ion-color-primary-rgb), 0.7);
+}
+
+.bg-custom-primary-shade {
+    background: var(--ion-color-primary-shade);
+}
+
+.bg-custom-primary-tint {
+    background: var(--ion-color-primary-tint);
+}
+
+.text-custom-primary {
+    color: var(--ion-color-primary);
+}
+
+.focus\:border-custom-primary:focus {
+    border-color: var(--ion-color-primary);
+}
+
 .bg-blue-custom {
     background: #2b354b;
 }
