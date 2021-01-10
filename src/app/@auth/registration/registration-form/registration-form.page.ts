@@ -21,7 +21,7 @@ export class RegistrationFormPage implements OnInit {
 
   onSubmit() {
     console.log('RegistrationFormPage -> onSubmit -> onSubmit');
-    this.navCtrl.navigateRoot('/tabs/tab1');
+    this.navCtrl.navigateRoot('/tabs');
   }
 
   get isValid() {
