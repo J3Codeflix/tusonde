@@ -1,0 +1,70 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Tusonde Details</ion-title>
+
+    <ion-buttons slot="end">
+      <button class="h-10 w-10 focus:outline-none rounded-full ripple-parent ion-activatable">
+        <ion-icon name="share-social-outline" class="text-gray-700 text-xl"></ion-icon>
+        <ion-ripple-effect></ion-ripple-effect>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <section class="py-8 px-4">
+    <img [src]="tusonde?.image" [alt]="tusonde?.title" class="rounded-2xl w-full">
+
+    <ion-grid class="p-0 mt-4">
+      <ion-row class="p-0">
+        <ion-col class="pl-0" size="6">
+          <section class="flex items-center">
+            <ion-icon size="large" name="disc" class="mr-4 text-custom-primary"></ion-icon>
+            <section>
+              <h2 class="m-0 text-gray-700">{{ tusonde?.goal | currency }}</h2>
+              <p class="text-gray-500">Target amount</p>
+            </section>
+          </section>
+        </ion-col>
+        <ion-col class="pr-0" size="6">
+          <section class="flex items-center justify-end">
+            <ion-icon size="large" name="stats-chart" class="mr-4 text-custom-primary"></ion-icon>
+            <section>
+              <h2 class="m-0 text-gray-700">{{ tusonde?.raisedAmount | currency }}</h2>
+              <p class="text-gray-500">Raised so far</p>
+            </section>
+          </section>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <div class="my-4">
+      <ion-progress-bar color="primary" [value]="(tusonde?.raisedAmount / tusonde?.goal)"></ion-progress-bar>
+    </div>
+
+    <section class="mt-4">
+      <section class="flex justify-between items-start">
+        <section>
+          <h1 class="text-gray-700 my-0">{{ tusonde?.title }}</h1>
+          <p class="text-gray-500">
+            Organized by 
+            <span class="text-custom-primary">Mark</span>
+          </p>
+        </section>
+
+        <button class="h-12 w-12 focus:outline-none rounded-full bg-custom-primary-100 ripple-parent ion-activatable">
+          <ion-icon name="bookmark-outline" class="text-custom-primary text-xl"></ion-icon>
+          <ion-ripple-effect></ion-ripple-effect>
+        </button>
+      </section>
+
+      <p class="text-gray-500 mt-4">
+        {{ tusonde?.description }}
+      </p>
+    </section>
+  </section>
+</ion-content>

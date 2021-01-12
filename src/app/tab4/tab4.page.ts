@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Tusonde } from './models/tusonde/tusonde.model';
 import { TusondeService } from './services/tusonde/tusonde.service';
 
@@ -10,7 +11,10 @@ import { TusondeService } from './services/tusonde/tusonde.service';
 export class Tab4Page {
   tusondes: Tusonde[] = [];
 
-  constructor(private tusondeService: TusondeService) {
+  constructor(
+    private router: Router,
+    private tusondeService: TusondeService
+  ) {
     (async() => {
       try {
         this.tusondes = await this.tusondeService.getAll();
@@ -20,4 +24,7 @@ export class Tab4Page {
     })();
   }
 
+  viewTusondeDetails(id: string) {
+    this.router.navigate([ `/tusonde-details/${id}` ]);
+  }
 }

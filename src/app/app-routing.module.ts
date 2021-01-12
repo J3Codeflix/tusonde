@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'registration-form',
     loadChildren: () => import('./@auth/registration/registration-form/registration-form.module').then( m => m.RegistrationFormPageModule)
   },
+  {
+    path: 'tusonde-details/:id',
+    loadChildren: () => import('./tusonde-details/tusonde-details.module').then( m => m.TusondeDetailsPageModule)
+  },
 ];
 @NgModule({
   imports: [

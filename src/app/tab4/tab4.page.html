@@ -24,7 +24,7 @@
   </div>
 
   <div *ngFor="let tusonde of tusondes" class="flex justify-center items-center p-4">
-    <div class="flex flex-col rounded-md shadow-lg ripple-parent ion-activatable">
+    <div (click)="viewTusondeDetails(tusonde.id)" class="flex flex-col rounded-md shadow-lg ripple-parent ion-activatable">
       <ion-ripple-effect></ion-ripple-effect>
 
       <div class="flex-shrink-0 relative">
@@ -53,11 +53,11 @@
         <hr class="border border-gray-100 h-0">
 
         <div class="flex justify-between mt-2">
-          <h5 class="text-custom-primary my-0">{{ ((tusonde.amountDonated / tusonde.goal) * 100) + '%' }}</h5>
+          <h5 class="text-custom-primary my-0">{{ ((tusonde.raisedAmount / tusonde.goal) * 100) + '%' }}</h5>
           <h5 class="my-0">{{ tusonde.goal | currency }}</h5>
         </div>
-        <div class="flex items-center my-2">
-          <ion-progress-bar color="primary" [value]="(tusonde.amountDonated / tusonde.goal)"></ion-progress-bar>
+        <div class="my-2">
+          <ion-progress-bar color="primary" [value]="(tusonde.raisedAmount / tusonde.goal)"></ion-progress-bar>
         </div>
       </div>
     </div>

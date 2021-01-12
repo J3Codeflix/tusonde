@@ -2,7 +2,15 @@
     background: var(--ion-color-primary);
 }
 
+.bg-custom-primary-shade {
+    background: --ion-color-primary-shade;
+}
+
 .bg-custom-primary-100 {
+    background: rgba(var(--ion-color-primary-rgb), 0.1);
+}
+
+.bg-custom-primary-700 {
     background: rgba(var(--ion-color-primary-rgb), 0.7);
 }
 
@@ -52,4 +60,14 @@
 
 .top-negative-64 {
     top: -64px;
+}
+
+.transparent-toolbar {
+    --background: transparent no-repeat fixed center;
+    position: absolute;
+
+    &::before,
+    &::after {
+        display: none;
+    }
 }
