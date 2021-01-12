@@ -24,23 +24,28 @@
   </div>
 
   <div *ngFor="let tusonde of tusondes" class="flex justify-center items-center p-4">
-    <div class="flex flex-col rounded-md shadow-lg">
+    <div class="flex flex-col rounded-md shadow-lg ripple-parent ion-activatable">
+      <ion-ripple-effect></ion-ripple-effect>
+
       <div class="flex-shrink-0 relative">
         <img class="h-48 w-full object-cover rounded-t-lg" [src]="tusonde.image" />
 
         <div class="absolute left-0 top-0 ml-4 mt-2">
           <div class="my-2 flex items-center">
-            <ion-badge [ngClass]="{ 'ml-2': i > 0 }" *ngFor="let tag of tusonde.tags; let i=index;">{{ tag }}</ion-badge>
+            <ion-badge [ngClass]="{ 'ml-2': i > 0 }" *ngFor="let category of tusonde.categories; let i=index;">{{ category }}</ion-badge>
           </div>
         </div>
       </div>
       <div class="flex-1 bg-white py-4 px-6 flex flex-col justify-between rounded-b-lg">
         <div class="flex-1">
           <h3 class="my-0 text-xl leading-7 font-semibold text-gray-900">
-            {{ tusonde.name }}
+            {{ tusonde.title }}
           </h3>
+          <p class="mb-2 text-md text-base leading-6 text-gray-500">
+            {{ tusonde.endDate | date: 'MMM dd, yyyy' }}
+          </p>
 
-          <p class="mb-2 text-base leading-6 text-gray-500">
+          <p class="mb-2 text-md -text-base leading-6 text-gray-500">
             {{ tusonde.description }}
           </p>
         </div>
@@ -48,11 +53,11 @@
         <hr class="border border-gray-100 h-0">
 
         <div class="flex justify-between mt-2">
-          <h5 class="text-custom-primary my-0">{{ tusonde.percentage + '%' }}</h5>
-          <h5 class="my-0">{{ tusonde.amount | currency }}</h5>
+          <h5 class="text-custom-primary my-0">{{ ((tusonde.amountDonated / tusonde.goal) * 100) + '%' }}</h5>
+          <h5 class="my-0">{{ tusonde.goal | currency }}</h5>
         </div>
         <div class="flex items-center my-2">
-          <ion-progress-bar color="primary" [value]="tusonde.percentage / 100"></ion-progress-bar>
+          <ion-progress-bar color="primary" [value]="(tusonde.amountDonated / tusonde.goal)"></ion-progress-bar>
         </div>
       </div>
     </div>

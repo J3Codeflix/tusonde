@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Tusonde } from './services/models/tusonde/tusonde.model';
+import { Tusonde } from './models/tusonde/tusonde.model';
 import { TusondeService } from './services/tusonde/tusonde.service';
 
 @Component({
