@@ -9,14 +9,16 @@
 </ion-header>
 
 <ion-content>
-  <section class="py-8 px-4">
+  <section class="p-4">
     <img [src]="tusonde?.image" [alt]="tusonde?.title" class="rounded-2xl w-full">
 
     <ion-grid class="p-0 mt-4">
       <ion-row class="p-0">
         <ion-col class="pl-0" size="6">
-          <section class="flex items-center">
-            <ion-icon size="large" name="disc" class="mr-4 text-custom-primary"></ion-icon>
+          <section class="flex items-center justify-center">
+            <ion-text color="primary" class="mr-4">
+              <ion-icon size="large" name="disc"></ion-icon>
+            </ion-text>
             <section>
               <h2 class="m-0 text-gray-700">{{ tusonde?.goal | currency }}</h2>
               <p class="text-gray-500">Target amount</p>
@@ -24,8 +26,10 @@
           </section>
         </ion-col>
         <ion-col class="pr-0" size="6">
-          <section class="flex items-center justify-end">
-            <ion-icon size="large" name="stats-chart" class="mr-4 text-custom-primary"></ion-icon>
+          <section class="flex items-center justify-center">
+            <ion-text color="secondary" class="mr-4">
+              <ion-icon size="large" name="stats-chart"></ion-icon>
+            </ion-text>
             <section>
               <h2 class="m-0 text-gray-700">{{ tusonde?.raisedAmount | currency }}</h2>
               <p class="text-gray-500">Raised so far</p>
