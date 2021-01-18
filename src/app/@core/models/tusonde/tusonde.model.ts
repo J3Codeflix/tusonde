@@ -1,11 +1,12 @@
 export class Tusonde {
-    id: string;
+    ID: string;
     userId: string;
-    title: string;
-    description: string;
+    creator: string;
     image: string;
+    endDate: string;
     categories: string[];
     raisedAmount: number;
     goal: number;
-    endDate: string;
+    description: string;
+    title: string;
 }

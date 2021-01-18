@@ -1,0 +1,37 @@
+<ion-content>
+  <section class="flex flex-col align-center justify-center h-full p-6">
+    <img class="w-4/12 mx-auto" src="./assets/icon/favicon.png">
+    <h1 class="text-center">Login</h1>
+  
+    <form [formGroup]="form">
+      <section class="py-2.5">
+        <span class="text-gray-700">Email</span>
+        <input formControlName="email" type="email" class="text-md block mt-1 px-3 py-2.5 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-none focus:placeholder-gray-500 focus:bg-white focus:border-custom-primary focus:outline-none" />
+      </section>
+  
+      <section class="py-2.5">
+        <span class="text-gray-700">Password</span>
+        <div class="relative">
+          <input formControlName="password" [type]="passwordInputType"
+            class="text-md block mt-1 px-3 py-2.5 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-none focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none" />
+            <div class="absolute inset-y-0 right-0 pr-2 flex items-center text-sm leading-5">
+              <button (click)="toggleShowPassword()" class="py-1 px-2 rounded-full focus:outline-none text-gray-600">
+                <ion-icon *ngIf="showPassword" class="text-2xl" slot="icon-only" name="eye-off"></ion-icon>
+                <ion-icon *ngIf="!showPassword" class="text-2xl" slot="icon-only" name="eye"></ion-icon>
+              </button>
+            </div>
+        </div>
+      </section>
+    </form>
+  </section>
+</ion-content>
+
+<ion-footer class="no-border">
+  <ion-toolbar class="px-6">
+    <button (click)="onSubmit()" [disabled]="form.invalid" [ngClass]="{ 'opacity-50': form.invalid, 'ion-activatable ripple-parent': form.valid }" [disabled]="!isValid" class="my-4 text-lg font-semibold bg-custom-primary w-full text-white rounded-lg px-4 py-2.5 block shadow-md outline-none">
+      Login
+      <ion-ripple-effect></ion-ripple-effect>
+    </button>
+  </ion-toolbar>
+</ion-footer>
+

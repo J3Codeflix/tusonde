@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Tusonde } from './models/tusonde/tusonde.model';
-import { TusondeService } from './services/tusonde/tusonde.service';
+import { Tusonde } from '../@core/models/tusonde/tusonde.model';
+import { TusondeService } from '../@core/services/tusonde/tusonde.service';
 
 @Component({
   selector: 'app-tab4',
