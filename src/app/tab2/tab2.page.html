@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      My Tusonde
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,63 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">Tusonde</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <div class="pt-4 px-4">
+    <div class="pt-2 relative mx-auto text-gray-600">
+      <input class="w-full border-2 bg-gray-200 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none pl-10"
+        type="search" name="search" placeholder="Search Tusonde e.g. Land Plot ...">
+      <button type="submit" class="absolute left-0 top-0 mt-5 ml-4">
+        <ion-icon class="text-gray-500" name="search"></ion-icon>
+      </button>
+    </div>
+  </div>
+
+  <div *ngFor="let tusonde of tusondes" class="flex justify-center items-center p-4">
+    <div (click)="viewTusondeDetails(tusonde.ID)" class="flex flex-col rounded-md shadow-lg ripple-parent ion-activatable">
+      <ion-ripple-effect></ion-ripple-effect>
+
+      <div class="flex-shrink-0 relative">
+        <img class="h-48 w-full object-cover rounded-t-lg" [src]="tusonde.image" onerror="this.src='./assets/images/tusonde/tusonde-1.svg'" />
+
+        <div class="absolute left-0 top-0 ml-4 mt-2">
+          <div class="my-2 flex items-center">
+            <ion-badge [ngClass]="{ 'ml-2': i > 0 }" *ngFor="let category of tusonde.categories; let i=index;">{{ category }}</ion-badge>
+          </div>
+        </div>
+      </div>
+      <div class="flex-1 bg-white py-4 px-6 flex flex-col justify-between rounded-b-lg">
+        <div class="flex-1">
+          <h3 class="my-0 text-xl leading-7 font-semibold text-gray-900">
+            {{ tusonde.title }}
+          </h3>
+          <p class="mb-2 text-md text-base leading-6 text-gray-500">
+            {{ tusonde.endDate | date: 'MMM dd, yyyy' }}
+          </p>
+
+          <p class="mb-2 text-md -text-base leading-6 text-gray-500">
+            {{ tusonde.description }}
+          </p>
+        </div>
+
+        <hr class="border border-gray-100 h-0">
+
+        <div class="flex justify-between mt-2">
+          <h5 class="text-custom-primary my-0">{{ ((tusonde.raisedAmount / tusonde.goal) * 100) + '%' }}</h5>
+          <h5 class="my-0">{{ tusonde.goal | currency }}</h5>
+        </div>
+        <div class="my-2">
+          <ion-progress-bar color="primary" [value]="(tusonde.raisedAmount / tusonde.goal)"></ion-progress-bar>
+        </div>
+      </div>
+    </div>
+  </div>
 </ion-content>
