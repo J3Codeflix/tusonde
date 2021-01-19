@@ -19,9 +19,19 @@ export class TusondeService {
 
     async getAll(): Promise<Tusonde[]> {
         try {
-            const userProfile = await this.authService.getUserProfile();
             const headers = await this.authService.getAuthHeaders();
-            const url = `${environment.apiUrl}/tusonde/per-user/${userProfile.user.ID}`;
+            const url = `${environment.apiUrl}/tusonde`;
+            this.tusondes = await this.http.get(url, headers).toPromise() as ArrayResult<Tusonde[]>;
+            return this.tusondes.Items;
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    async getAllPerUser(userId: string): Promise<Tusonde[]> {
+        try {
+            const headers = await this.authService.getAuthHeaders();
+            const url = `${environment.apiUrl}/tusonde/per-user/${userId}`;
             this.tusondes = await this.http.get(url, headers).toPromise() as ArrayResult<Tusonde[]>;
             return this.tusondes.Items;
         } catch (error) {
