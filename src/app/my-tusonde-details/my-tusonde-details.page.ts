@@ -5,11 +5,11 @@ import { ToastService } from '../@core/services/toast/toast.service';
 import { TusondeService } from '../@core/services/tusonde/tusonde.service';
 
 @Component({
-  selector: 'app-tusonde-details',
-  templateUrl: './tusonde-details.page.html',
-  styleUrls: ['./tusonde-details.page.scss'],
+  selector: 'app-my-tusonde-details',
+  templateUrl: './my-tusonde-details.page.html',
+  styleUrls: ['./my-tusonde-details.page.scss'],
 })
-export class TusondeDetailsPage implements OnInit {
+export class MyTusondeDetailsPage implements OnInit {
   tusonde: Tusonde;
 
   constructor(

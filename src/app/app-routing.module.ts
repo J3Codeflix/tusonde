@@ -35,6 +35,10 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./@auth/login/login.module').then( m => m.LoginPageModule)
   },
+  {
+    path: 'my-tusonde-details/:id',
+    loadChildren: () => import('./my-tusonde-details/my-tusonde-details.module').then( m => m.MyTusondeDetailsPageModule)
+  },
 ];
 @NgModule({
   imports: [

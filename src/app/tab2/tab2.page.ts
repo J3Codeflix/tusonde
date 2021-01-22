@@ -29,6 +29,6 @@ export class Tab2Page {
   }
 
   viewTusondeDetails(id: string) {
-    this.router.navigate([ `/tusonde-details/${id}` ]);
+    this.router.navigate([ `/my-tusonde-details/${id}` ]);
   }
 }
