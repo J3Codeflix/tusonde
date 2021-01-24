@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { CanLoadGuardService } from './@core/services/can-load-guard/can-load-guard.service';
 
 const routes: Routes = [
   {
@@ -9,11 +10,12 @@ const routes: Routes = [
   },
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule),
   },
   {
     path: 'onboarding',
-    loadChildren: () => import('./onboarding/onboarding.module').then( m => m.OnboardingPageModule)
+    loadChildren: () => import('./onboarding/onboarding.module').then( m => m.OnboardingPageModule),
+    canLoad: [ CanLoadGuardService ]
   },
   {
     path: 'mobile-number',

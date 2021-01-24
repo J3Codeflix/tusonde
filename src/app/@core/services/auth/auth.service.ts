@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
 import { Storage } from '@ionic/storage';
+import { environment } from 'src/environments/environment';
 
 import { UserProfile } from '../../models/auth/user.model';
 
@@ -41,6 +41,20 @@ export class AuthService {
           Authorization: `Bearer ${userProfile.accessToken}`
         }
       };
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async isRegistered(): Promise<boolean> {
+    try {
+      const hasUserProfile = await this.getUserProfile();
+
+      if (!hasUserProfile) {
+        return false;
+      }
+
+      return true;
     } catch (error) {
       throw error;
     }
