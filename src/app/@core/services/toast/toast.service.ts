@@ -8,7 +8,7 @@ export class ToastService {
 
   constructor(private toastCtrl: ToastController) { }
 
-  async show(message: string, durationInSeconds: number = 555): Promise<HTMLIonToastElement> {
+  async show(message: string, durationInSeconds: number = 5): Promise<HTMLIonToastElement> {
     const durationInMs: number = durationInSeconds * 1000;
 
     const toast: HTMLIonToastElement = await this.toastCtrl.create({
