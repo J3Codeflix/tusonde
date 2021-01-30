@@ -46,4 +46,14 @@ export class TusondeService {
             throw error;
         }
     }
+
+    async submitNewTusonde(tusonde: Tusonde) {
+        try {
+            const headers = await this.authService.getAuthHeaders();
+            const url = `${environment.apiUrl}/tusonde/submit`;
+            return await this.http.post(url, tusonde, headers).toPromise() as ArrayResult<Tusonde[]>;
+        } catch (error) {
+            throw error;
+        }
+    }
 }

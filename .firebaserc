@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "tusonde-2021": {
+      "hosting": {
+        "app": [
+          "tusonde-2021"
+        ]
+      }
+    }
+  }
+}

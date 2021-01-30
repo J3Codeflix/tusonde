@@ -1,5 +1,5 @@
 export class Tusonde {
-    ID: string;
+    ID?: string;
     userId: string;
     creator: string;
     image: string;

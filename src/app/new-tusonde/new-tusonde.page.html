@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab2"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>New Tusonde</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <section class="p-4">
+    <div class="w-full mb-4">
+      <label for="title" class="text-gray-700 block mb-2">Image</label>
+      <div class="flex items-center justify-center bg-grey-lighter h-42">
+        <label class="relative w-full flex flex-col items-center justify-center px-4 py-6 bg-white text-blue rounded-lg shadow-sm tracking-wide border border-blue cursor-pointer">
+            <ng-template #selectImageLabel>
+              <ion-icon name="image" class="w-8 h-8 text-gray-600"></ion-icon>
+              <span class="mt-2 text-base leading-normal text-gray-600">Select an Image</span>
+            </ng-template>
+
+            <section class="relative flex flex-col items-center justify-center">
+              <img *ngIf="image else selectImageLabel" [src]="image" class="w-full relative rounded-md"/>
+              <div *ngIf="image" id="overlay" class="flex flex-col items-end p-4  rounded-md">
+                <ion-icon class="bg-white rounded-full text-black p-2 text-2xl text-gray-700" name="pencil"></ion-icon>
+              </div>            
+            </section>
+
+            <input type="file" accept="image/*" class="hidden" (change)="fileChange($event)" />
+        </label>
+      </div>
+    </div>
+
+    <div class="w-full mb-4">
+      <label for="title" class="text-gray-700 block mb-2">Title</label>
+      <input [(ngModel)]="form.title" type="text" id="title" class="bg-white w-full pl-4 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-custom-primary" placeholder="Charity for Vanya">
+    </div>
+
+    <div class="w-full mb-4">
+      <label for="description" class="text-gray-700 block mb-2">Description</label>
+      <textarea [(ngModel)]="form.description" row="3" id="description" class="bg-white w-full pl-4 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-custom-primary" placeholder="Enter description e.g. Help children with poor eyesight."></textarea>
+    </div>
+
+    <div class="w-full mb-4">
+      <label for="goal" class="text-gray-700 block mb-2">Goal</label>
+      <input [(ngModel)]="form.goal" type="number" id="goal" class="bg-white w-full pl-4 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-custom-primary" placeholder="$1000.00">
+    </div>
+
+    <div class="w-full mb-4">
+      <label for="endDate" class="text-gray-700 block mb-2">End Date</label>
+      <input [(ngModel)]="form.endDate" [min]="minDate" type="date" id="endDate" class="bg-white w-full pl-4 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-custom-primary">
+    </div>
+
+    <div class="w-full mb-4">
+      <label for="categories" class="text-gray-700 block mb-2">Categories</label>
+      <div class="flex">
+        <input (keyup.enter)="addCategory()" [(ngModel)]="form.category" type="text" id="categories" class="bg-white w-full -mr-10 pr-10 pl-4 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-custom-primary" placeholder="Charity Program">
+        <div (click)="addCategory()" class="w-10 z-10 text-center flex items-center justify-center pr-1">
+          <section class="flex items-center ion-activatable ripple-parent text-white rounded bg-custom-primary">
+            <ion-icon name="add" class="text-lg p-2"></ion-icon>
+            <ion-ripple-effect></ion-ripple-effect>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <ion-item *ngFor="let category of form.categories; let i=index">
+      <ion-label>{{ category }}</ion-label>
+      <button (click)="removeCategory(i)" class="ion-activatable ripple-parent rounded-full h-8 w-8" slot="end">
+        <ion-icon size="large" name="remove-circle-outline" class="text-red-500"></ion-icon>
+        <ion-ripple-effect></ion-ripple-effect>
+      </button>
+    </ion-item>
+  </section>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar class="px-4">
+    <button (click)="submit()" [disabled]="isLoading" [ngClass]="{ 'ion-activatable': !isLoading, 'opacity-50': isLoading }" class="ripple-parent my-4 text-lg font-semibold bg-custom-primary w-full text-white rounded-lg px-4 py-2.5 block outline-none">
+      
+      <span *ngIf="!isLoading else loadingText">Submit New Tusonde</span>
+      <ng-template #loadingText>Submitting...</ng-template>
+      
+
+      <section *ngIf="isLoading" class="absolute flex h-full items-center mr-4 right-0 top-0">
+        <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+      </section>
+
+      <ion-ripple-effect></ion-ripple-effect>
+    </button>
+  </ion-toolbar>
+</ion-footer>
